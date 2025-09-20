@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gerenciamento de Aluguel</title>
+  <script defer src="script.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+  <div class="flex justify-center space-x-6 p-4 bg-white shadow-md">
+    <button class="tab-btn font-bold" data-tab="carros">Carros</button>
+    <button class="tab-btn" data-tab="aluguéis">Aluguéis</button>
+    <button class="tab-btn" data-tab="infrações">Infrações e Multas</button>
+    <button class="tab-btn" data-tab="clientes">Clientes</button>
+    <button class="tab-btn" data-tab="manutenções">Manutenções</button>
+  </div>
+
+
+  <div class="p-6">
+    <div id="tab-content"></div>
+  </div>
+</body>
+</html>
