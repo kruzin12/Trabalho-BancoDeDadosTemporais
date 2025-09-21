@@ -25,7 +25,7 @@ const mockInfracoes = [
 ];
 
 const mockManutencoes = [
-  { carro: "BMW - ABC-1234", entrada: "2025-09-01", saida: "2025-09-07", motivo: "Troca de motor", custo: 4500 },
+  { marca: "BMW", carro: "BMW - ABC-1234", entrada: "2025-09-01", saida: "2025-09-07", motivo: "Troca de motor", custo: 4500, imagem: "carro1.png" },
 ];
 
 
@@ -145,13 +145,16 @@ function carregarManutencoes() {
   const ul = document.getElementById("manutencoes");
   mockManutencoes.forEach(m => {
     const li = document.createElement("li");
-    li.className = "bg-white shadow-md p-4 rounded-lg";
+    li.className = "bg-white shadow-md p-4 rounded-lg flex justify-between items-center";
     li.innerHTML = `
-      <p><b>Carro:</b> ${m.carro}</p>
-      <p><b>Entrada:</b> ${m.entrada}</p>
-      <p><b>Saída:</b> ${m.saida}</p>
-      <p><b>Motivo:</b> ${m.motivo}</p>
-      <p><b>Custo:</b> R$ ${m.custo}</p>
+      <div>
+        <p><b>Carro:</b> ${m.carro}</p>
+        <p><b>Entrada:</b> ${m.entrada}</p>
+        <p><b>Saída:</b> ${m.saida}</p>
+        <p><b>Motivo:</b> ${m.motivo}</p>
+        <p><b>Custo:</b> R$ ${m.custo}</p>
+      </div>
+      <img src="img/${m.imagem}" alt="${m.marca}" class="w-24 h-16 object-contain ml-4">
     `;
     ul.appendChild(li);
   });
