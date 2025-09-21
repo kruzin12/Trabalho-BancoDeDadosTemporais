@@ -1,13 +1,13 @@
 const mockCarros = [
   { id: 1, marca: "BMW", placa: "ABC-1234", cor: "Cinza", status: "Disponível", quilometragem: 15000, valor: 1000, imagem: "carro1.png" },
   { id: 2, marca: "Fiat Argo", placa: "DEF-5678", cor: "Vermelho", status: "Alugado", quilometragem: 32000, valor: 150, imagem: "carro2.png" },
-  { id: 3, marca: "Jeep Compass", placa: "GHI-9012", cor: "Cinza", status: "Em manutenção", quilometragem: 48000, valor: 350, imagem: "carro3.png" },
-  { id: 4, marca: "Chevrolet Onix", placa: "JKL-3456", cor: "Vermelho", status: "Disponível", quilometragem: 22000, valor: 130, imagem: "carro4.png" },
-  { id: 5, marca: "Volkswagen Polo", placa: "MNO-7890", cor: "Azul", status: "Disponível", quilometragem: 27500, valor: 140, imagem: "carro5.png" },
-  { id: 6, marca: "Toyota Corolla", placa: "PQR-2345", cor: "Prata", status: "Avariado", quilometragem: 65000, valor: 280, imagem: "carro6.png" },
-  { id: 7, marca: "Renault Kwid", placa: "STU-6789", cor: "Amarelo", status: "Disponível", quilometragem: 12000, valor: 120, imagem: "carro7.png" },
-  { id: 8, marca: "Honda Civic", placa: "VWX-1234", cor: "Preto", status: "Roubado", quilometragem: 54000, valor: 220, imagem: "carro8.png" },
-  { id: 9, marca: "Ford Ka", placa: "YZA-5678", cor: "Verde", status: "Vendido", quilometragem: 40000, valor: 110, imagem: "carro9.png" },
+  { id: 3, marca: "Jeep Compass", placa: "GHI-9012", cor: "Branco", status: "Em manutenção", quilometragem: 48000, valor: 350, imagem: "carro3.png" },
+  { id: 4, marca: "Chevrolet Onix", placa: "JKL-3456", cor: "Preto", status: "Disponível", quilometragem: 22000, valor: 130, imagem: "carro4.png" },
+  { id: 5, marca: "Volkswagen Polo", placa: "MNO-7890", cor: "Branco", status: "Disponível", quilometragem: 27500, valor: 140, imagem: "carro5.png" },
+  { id: 6, marca: "Toyota Corolla", placa: "PQR-2345", cor: "Branco", status: "Avariado", quilometragem: 65000, valor: 280, imagem: "carro6.png" },
+  { id: 7, marca: "Renault Kwid", placa: "STU-6789", cor: "Branco", status: "Disponível", quilometragem: 12000, valor: 120, imagem: "carro7.png" },
+  { id: 8, marca: "Honda Civic", placa: "VWX-1234", cor: "Vermelho", status: "Roubado", quilometragem: 54000, valor: 220, imagem: "carro8.png" },
+  { id: 9, marca: "Ford Ka", placa: "YZA-5678", cor: "Preto", status: "Vendido", quilometragem: 40000, valor: 110, imagem: "carro9.png" },
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
