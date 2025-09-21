@@ -3,7 +3,7 @@
     padding: 1rem;
   }
   .card img {
-    height: 120px; /* reduz altura da imagem no mobile */
+    height: 120px;
   }
 }
 
