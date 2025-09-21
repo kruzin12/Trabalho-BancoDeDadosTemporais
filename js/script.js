@@ -20,8 +20,8 @@ const mockAlugueis = [
 ];
 
 const mockInfracoes = [
-  { data: "2025-08-15", motivo: "Excesso de velocidade", valor: 350 },
-  { data: "2025-09-05", motivo: "Estacionamento proibido", valor: 200 },
+  { marca: "Toyota Corolla", placa: "PQR-2345", data: "2025-08-15", motivo: "Excesso de velocidade", valor: 350, imagem: "carro6.png" },
+  { marca: "Ford Ka", placa: "YZA-5678", data: "2025-09-05", motivo: "Estacionamento proibido", valor: 200, imagem: "carro9.png" },
 ];
 
 const mockManutencoes = [
@@ -118,14 +118,20 @@ function carregarInfracoes() {
 
   const ul = document.getElementById("infracoes");
   mockInfracoes.forEach(i => {
-    const li = document.createElement("li");
-    li.className = "bg-white shadow-md p-4 rounded-lg";
-    li.innerHTML = `
+  const li = document.createElement("li");
+  li.className = "bg-white shadow-md p-4 rounded-lg flex justify-between items-center";
+
+  li.innerHTML = `
+    <div>
+      <p><b>Carro:</b> ${i.marca} - ${i.placa}</p>
       <p><b>Data:</b> ${i.data}</p>
       <p><b>Motivo:</b> ${i.motivo}</p>
       <p><b>Valor:</b> R$ ${i.valor}</p>
-    `;
-    ul.appendChild(li);
+    </div>
+    <img src="img/${i.imagem}" alt="${i.marca}" class="w-24 h-16 object-contain ml-4">
+  `;
+
+  ul.appendChild(li);
   });
 }
 
