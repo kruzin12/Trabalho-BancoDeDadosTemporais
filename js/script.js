@@ -11,8 +11,8 @@ const mockCarros = [
 ];
 
 const mockClientes = [
-  { id: 1, nome: "João Silva", cpf: "123.456.789-00", email: "joao@email.com", telefone: "(51) 99999-1111" },
-  { id: 2, nome: "Maria Oliveira", cpf: "987.654.321-00", email: "maria@email.com", telefone: "(51) 98888-2222" },
+  { id: 1, nome: "João Silva", cpf: "123.456.789-00", email: "joao@email.com", telefone: "(51) 9 9999-1111" },
+  { id: 2, nome: "Maria Oliveira", cpf: "987.654.321-00", email: "maria@email.com", telefone: "(51) 9 8888-2222" },
 ];
 
 const mockAlugueis = [
@@ -31,7 +31,7 @@ const mockManutencoes = [
 
 function carregarCarros(filtro = "") {
   const content = document.getElementById("tab-content");
-  content.innerHTML = `<div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="carros"></div>`;
+  content.innerHTML = `<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="carros"></div>`;
   const container = document.getElementById("carros");
 
   mockCarros
@@ -42,13 +42,15 @@ function carregarCarros(filtro = "") {
     .forEach(c => {
       const card = document.createElement("div");
       card.className = "bg-white shadow-md p-4 rounded-lg";
+      
       card.innerHTML = `
         <img src="img/${c.imagem}" alt="${c.marca}" class="w-full h-40 object-contain mb-2">
         <h2 class="font-bold">${c.marca} - ${c.placa}</h2>
-        <p>Preço do aluguel: ${c.valor}</p>
         <p>Cor: ${c.cor}</p>
-        <p>Status: <span class="font-semibold">${c.status}</span></p>
+        <p>Status: ${c.status}</p>
         <p>Km: ${c.quilometragem}</p>
+        <p>Preço: R$ ${c.valor ?? "N/D"},00</p>
+        <a href="editar.html?id=${c.id}"class="btn btn-blue w-full text-center block mt-2">Editar</a>
       `;
       container.appendChild(card);
     });
@@ -78,7 +80,7 @@ function carregarClientes() {
 function carregarAlugueis() {
   const content = document.getElementById("tab-content");
   content.innerHTML = `
-    <h1 class="text-xl font-bold mb-4">alugueis</h1>
+    <h1 class="text-xl font-bold mb-4">Aluguéis</h1>
     <table class="min-w-full bg-white shadow-md rounded-lg">
       <thead>
         <tr class="bg-gray-200 text-left">
@@ -101,7 +103,7 @@ function carregarAlugueis() {
       <td class="p-2">${a.carro}</td>
       <td class="p-2">${a.retirada}</td>
       <td class="p-2">${a.devolucao}</td>
-      <td class="p-2">${a.km} km</td>
+      <td class="p-2">${a.km}</td>
     `;
     tbody.appendChild(tr);
   });
@@ -110,7 +112,7 @@ function carregarAlugueis() {
 function carregarInfracoes() {
   const content = document.getElementById("tab-content");
   content.innerHTML = `
-    <h1 class="text-xl font-bold mb-4">infracoes e Multas</h1>
+    <h1 class="text-xl font-bold mb-4">Infrações e Multas</h1>
     <ul id="infracoes" class="space-y-2"></ul>
   `;
 
@@ -130,7 +132,7 @@ function carregarInfracoes() {
 function carregarManutencoes() {
   const content = document.getElementById("tab-content");
   content.innerHTML = `
-    <h1 class="text-xl font-bold mb-4">manutencoes</h1>
+    <h1 class="text-xl font-bold mb-4">Manutenções</h1>
     <ul id="manutencoes" class="space-y-2"></ul>
   `;
 
@@ -139,7 +141,6 @@ function carregarManutencoes() {
     const li = document.createElement("li");
     li.className = "bg-white shadow-md p-4 rounded-lg";
     li.innerHTML = `
-
       <p><b>Carro:</b> ${m.carro}</p>
       <p><b>Entrada:</b> ${m.entrada}</p>
       <p><b>Saída:</b> ${m.saida}</p>

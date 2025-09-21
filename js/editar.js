@@ -41,28 +41,4 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("quilometragem").value = carro.quilometragem;
   document.getElementById("status").value = carro.status;
   document.getElementById("valor").value = carro.valor;
-
-  form.addEventListener("submit", e => {
-    e.preventDefault();
-
-    carro.marca = document.getElementById("marca").value;
-    carro.placa = document.getElementById("placa").value;
-    carro.cor = document.getElementById("cor").value;
-    carro.quilometragem = parseInt(document.getElementById("quilometragem").value);
-    carro.status = document.getElementById("status").value;
-    carro.valor = parseFloat(document.getElementById("valor").value);
-
-    carroInfo.innerHTML = `
-      <div class="flex items-center space-x-4">
-        <img src="img/${carro.imagem}" alt="${carro.marca}" class="w-32 h-24 object-contain">
-        <div>
-          <h2 class="font-bold">${carro.marca} - ${carro.placa}</h2>
-          <p>Status atual: <span class="font-semibold">${carro.status}</span></p>
-          <p>Preço atual: R$ ${carro.valor}</p>
-        </div>
-      </div>
-    `;
-
-    alert("Carro atualizado com sucesso!");
-  });
 });
