@@ -138,7 +138,10 @@ function carregarInfracoes() {
 function carregarManutencoes() {
   const content = document.getElementById("tab-content");
   content.innerHTML = `
-    <h1 class="text-xl font-bold mb-4">Manutenções</h1>
+    <div class="flex justify-between items-center mb-4">
+      <h1 class="text-xl font-bold">Manutenções</h1>
+      <button class="btn btn-green">+ Adicionar manutenção</button>
+    </div>
     <ul id="manutencoes" class="space-y-2"></ul>
   `;
 
@@ -154,12 +157,11 @@ function carregarManutencoes() {
         <p><b>Motivo:</b> ${m.motivo}</p>
         <p><b>Custo:</b> R$ ${m.custo}</p>
       </div>
-      <img src="img/${m.imagem}" alt="${m.marca}" class="w-24 h-16 object-contain ml-4">
+      <img src="img/${m.imagem}" alt="${m.marca}" class="w-32 h-20 object-cover rounded ml-4 shadow">
     `;
     ul.appendChild(li);
   });
 }
-
 
 document.addEventListener("DOMContentLoaded", () => {
   const buttons = document.querySelectorAll(".tab-btn");
